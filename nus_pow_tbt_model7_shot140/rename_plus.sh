@@ -8,7 +8,7 @@ datapath='/data/wyw/make_data/case_large_train/process_shotmore_model_7_pow/seis
 #datapath_target=${datapath}
 datapath_target=`pwd`
 model_range=1
-shot_range=140
+shot_range=141
 
 mkdir ${datapath_target}/vz
 mkdir ${datapath_target}/vx
@@ -20,7 +20,8 @@ do
   for (( jj=0; jj<${shot_range}; jj++ ))
   do
     ii=7
-    this_index=$(( ${ii}*${shot_range} + ${jj} ))
+    #this_index=$(( ${ii}*${shot_range} + ${jj} ))
+    this_index=$((  ${jj} ))
     echo ${this_index}
     tarvz=vzmodel_${ii}_shot_${jj}_vz_afterpowmodel_${ii}_shot_${jj}_vz_plot_ready.rsf@
 #  name2=model_${ii}_shot_${jj}_div_plot_ready.rsf@
